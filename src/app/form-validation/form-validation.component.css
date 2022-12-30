@@ -1,0 +1,292 @@
+/* start style landing page form*/
+.landingPageForm h1{
+  text-align: center;
+  margin: 50px 0;
+  position: relative;
+}
+
+.landingPageForm h1::before{
+  content: "*";
+  font-size: 50px;
+  color: #ab0202;
+  margin-right: 15px;
+  /* animation: rotat .5s linear infinite ;
+  -webkit-animation: rotat .5s linear infinite ; */
+}
+
+/* @keyframes rotat{
+  100%{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+} */
+
+.landingPageForm h1::after{
+  content: "*";
+  font-size: 50px;
+  color: #ab0202;
+  margin-left: 15px;
+}
+
+.landingPageForm .company-des{
+  margin-bottom: 50px;
+}
+
+.landingPageForm .company-des .icon{
+  width: 60px;
+  height: 60px;
+  background-color: #ab0202;
+  color: #FFF;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  transition: all ease-in-out .5s;
+  -webkit-transition: all ease-in-out .5s;
+  -moz-transition: all ease-in-out .5s;
+  -ms-transition: all ease-in-out .5s;
+  -o-transition: all ease-in-out .5s;
+  cursor: pointer;
+}
+
+.space{
+  margin-bottom: 20px;
+}
+
+.landingPageForm .company-des .icon:hover{
+  background-color: #FFF;
+  color: #ab0202;
+  border: 1px solid #ab0202;
+}
+
+.landingPageForm .company-des .icon i{
+  font-size: 20px;
+}
+
+.landingPageForm .company-des .text{
+  text-align: center;
+}
+
+.landingPageForm .company-des .text span{
+  font-weight: bold;
+  color: #222;
+}
+
+.landingPageForm .company-des .text a{
+  color: #ab0202;
+  text-decoration: none;
+}
+
+/* end style landing page form*/
+
+/* start style form*/
+
+.validationForm{
+  background-color: #FFF;
+  padding: 20px;
+  margin: 50px 0;
+}
+
+.validationForm .image{
+  height: 100%;
+  width: 100%;
+  background-image: url(../../assets/Logo_V2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media (max-width:991px) {
+  .validationForm .image{
+    display: none;
+  }
+}
+
+
+.triks{
+  position: relative;
+}
+
+.triks span{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  transition: all ease-in-out .5s;
+  -webkit-transition: all ease-in-out .5s;
+  -moz-transition: all ease-in-out .5s;
+  -ms-transition: all ease-in-out .5s;
+  -o-transition: all ease-in-out .5s;
+  z-index: 1;
+}
+
+.validationForm label{
+  display: inline-block;
+  width: 25%;
+}
+
+.validationForm input{
+  padding: 10px;
+  outline: none;
+  font-size: 20px;
+  border-bottom: 2px solid #ab0202;
+  margin-bottom: 20px;
+  border-radius: unset;
+  -webkit-border-radius: unset;
+  -moz-border-radius: unset;
+  -ms-border-radius: unset;
+  -o-border-radius: unset;
+  box-shadow: none;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+  caret-color: #ab0202;
+}
+
+.validationForm .triks-width input,
+.validationForm .triks-width select{
+  width: 75%;
+  margin: 10px 0;
+  border-bottom: 2px solid #000;
+}
+
+.validationForm .triks-width select{
+  height: 54px;
+  font-size: 20px;
+  border: 2px solid #ab0202;
+  box-shadow: none;
+  outline: none;
+  padding-left: 8px;
+}
+
+.files{
+  display: inline-block;
+  width: 75%;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.files span{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: #EEE;
+  width: 100%;
+  height: 55px;
+  text-align: left;
+  line-height: 55px;
+  color: #000;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+.files span::before{
+  content: "Upload";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ab0202;
+  width: 100px;
+  height: 55px;
+  text-align: center;
+  line-height: 55px;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.validationForm .files input[type='file']{
+  border: none;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.validationForm  form button{
+  margin-top: 10px;
+  font-size: 20px;
+  background-color: #ab0202;
+  outline: none;
+  box-shadow: none;
+  transition: all ease-in-out .5s;
+  -webkit-transition: all ease-in-out .5s;
+  -moz-transition: all ease-in-out .5s;
+  -ms-transition: all ease-in-out .5s;
+  -o-transition: all ease-in-out .5s;
+  border: 2px solid #FFF;
+}
+
+.validationForm  form button:hover{
+  background-color: #FFF;
+  color: #ab0202;
+  border: 2px solid #ab0202;
+}
+
+/* end style form*/
+
+
+.error{
+  color: red;
+}
+
+input.ng-invalid.ng-dirty{
+  border: 2px solid red;
+}
+
+.type-date{
+  text-align: center;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay .popup{
+  text-align: center;
+  background: #FFF;
+  padding: 20px;
+  animation: opcit ease-in-out 2s;
+  -webkit-animation: opcit ease-in-out 2s;
+  padding: 20px;
+  line-height: 100px;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+@keyframes opcit{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

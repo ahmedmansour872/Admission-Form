@@ -1,0 +1,240 @@
+<div class="landingPageForm">
+  <div class="container">
+    <h1>Validation Form</h1>
+    <div class="company-des">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 space">
+          <div class="icon">
+            <i class="fa-sharp fa-solid fa-location-dot"></i>
+          </div>
+          <div class="text">
+            <span>Address: </span>
+            11 Dr El-Sebaey, Ad Dokki, Giza Governorate
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 space">
+          <div class="icon" (click)="clicked($event)">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="text">
+            <span>Phone: </span>
+            <a href="tel://1021551322" target="_blank">+2 - 01021551322</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 space">
+          <div class="icon" (click)="clicked($event)">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <div class="text">
+            <span>Email: </span>
+            <a href="mailto:Bonder@digitalbondmena.com" target="_blank">Bonder@digitalbondmena.com</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 space">
+          <div class="icon" (click)="clicked($event)">
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+          <div class="text">
+            <span>Website: </span>
+            <a href="https://digitalbondmena.com/" target="_blank">digitalbondmena.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="form">
+  <div class="container">
+    <div class="validationForm">
+      <div class="row">
+        <div class="col-lg-7">
+          <form [formGroup]="validationForm" autocomplete="off" (ngSubmit)="onSubmit()">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="triks" formGroupName="fullName">
+
+                  <input autofocus  type="text" class="form-control" formControlName="firstName" name="firstName" (focus)="move($event)" (blur)="checkEmpty($event)">
+
+                  <span>First Name</span>
+
+                  <div class="error">
+                    <ng-container *ngIf="firstName?.invalid && firstName?.touched">
+
+                     <p *ngIf="firstName?.errors?.['required']">This filed is required </p>
+
+                     <p *ngIf="firstName?.errors?.['minlength']">first Name should be more than 4 Letter</p>
+
+                     <p *ngIf="firstName?.errors?.['invalidName']">first Name can't include a number </p>
+
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="triks" formGroupName="fullName">
+                  <input type="text"  class="form-control" formControlName="lastName" name="lastName" (focus)="move($event)" (blur)="checkEmpty($event)">
+                  <span>Last Name</span>
+                  <div class="error">
+                    <ng-container *ngIf="LastName?.invalid && LastName?.touched">
+
+                    <p *ngIf="LastName?.errors?.['required']">This filed is required </p>
+
+                    <p *ngIf="LastName?.errors?.['minlength']">last Name should be more than 4 Letter</p>
+
+                    <p *ngIf="LastName?.errors?.['invalidName']">Last Name can't include a number </p>
+
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="triks" formGroupName="address">
+                  <input type="text"  formControlName="city" class="form-control"
+                  name="city" (focus)="move($event)" (blur)="checkEmpty($event)">
+                  <span>city</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="triks" formGroupName="address">
+                  <input type="text"  formControlName="street" class="form-control"
+                  name="street" (focus)="move($event)" (blur)="checkEmpty($event)">
+                  <span>street</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="triks">
+                  <input type="text"  formControlName="position" class="form-control" name="position" (focus)="move($event)" (blur)="checkEmpty($event)">
+                  <span>Position</span>
+                  <div class="error">
+                    <ng-container *ngIf="position?.invalid && position?.touched">
+
+                     <p *ngIf="position?.errors?.['invalidName']">position can't include a number </p>
+
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="triks">
+
+                  <input type="text"  formControlName="phoneNumber" class="form-control"
+                  name="phone-number" (focus)="move($event)" (blur)="checkEmpty($event)">
+
+                  <span>Phone Number</span>
+                  <div class="error">
+                    <ng-container *ngIf="phoneNumber?.invalid && phoneNumber?.touched">
+
+                     <p *ngIf="phoneNumber?.errors?.['minlength']">phone Number should be equal 11 digit </p>
+
+                     <p *ngIf="phoneNumber?.errors?.['maxlength']">phone Number should be equal 11 digit </p>
+
+                     <p *ngIf="phoneNumber?.errors?.['pattern']">phone Number can't include letter</p>
+
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="triks">
+                  <input type="email"   formControlName="email" class="form-control"
+                  name="email" (focus)="move($event)" (blur)="checkEmpty($event)">
+                  <span>Email</span>
+
+                  <div class="error">
+                    <ng-container *ngIf="email?.invalid && email?.touched">
+
+                     <p *ngIf="email?.errors?.['required']">Email is required</p>
+
+                     <p *ngIf="email?.errors?.['pattern']">Invalid email address</p>
+
+                    </ng-container>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="triks">
+                  <input type="text"  formControlName="expectedSalary" class="form-control"
+                  name="expected-salary" (focus)="move($event)" (blur)="checkEmpty($event)">
+                  <span>Expected Salary</span>
+
+                  <div class="error">
+                    <ng-container *ngIf="expectedSalary?.invalid && expectedSalary?.touched">
+
+                     <p *ngIf="expectedSalary?.errors?.['maxlength']">salary is very big</p>
+
+                     <p *ngIf="expectedSalary?.errors?.['pattern']">salry can't include letter</p>
+
+                    </ng-container>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="triks-width">
+              <label for="avail-date">Available Date</label>
+              <input id="avail-date" type="date" formControlName="availabilityDate"
+              name="availability-date">
+
+              <div class="error type-date">
+                <ng-container *ngIf="avlableDate?.touched && availabe">
+                this date is very far
+                </ng-container>
+              </div>
+            </div>
+
+            <div class="triks-width">
+              <label for="date-Of-Birth">Date Of Birth</label>
+              <input id="date-Of-Birth" type="date" formControlName="dateOfBirth"
+              name="date-Of-Birth">
+
+              <div class="error type-date">
+                <ng-container *ngIf="dateOfBirth?.touched && birthDate">
+                this date is not valid
+                </ng-container>
+              </div>
+
+            </div>
+
+            <div class="triks-width">
+              <label for="marital-status">Marital Status</label>
+              <select id="marital-status" class="marital-status" name="marital-status" aria-label="Default select example" formControlName="maritalStatus">
+                <option value="1" [selected]="1">Single</option>
+                <option value="2">married</option>
+                <option value="3">divorced</option>
+                <option value="3">widowed</option>
+                <option value="3">never married</option>
+              </select>
+            </div>
+
+            <div class="triks-width">
+              <label for="file">Upload File</label>
+              <div class="files">
+                <span>Choose your file</span>
+                <input id="file" type="file" formControlName="file" name="file">
+              </div>
+            </div>
+
+            <!-- <button class="btn btn-danger form-control" [disabled]="validationForm.invalid">Submit</button> -->
+            <button class="btn btn-danger form-control">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-5 d-flex">
+          <div class="image p-5">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<ng-container *ngIf="fullName">
+  <div class="overlay">
+    <div class="popup">{{fullName}}</div>
+  </div>
+</ng-container>
